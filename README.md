@@ -19,6 +19,9 @@ Build the executable by navigating to the game catalogue in the terminal and uti
 GSnake is a project by:
 ---------------------------
 Nima Behnam
+tag_br
 Pernilla Petersson
+tag_br
 Klara Renström
+tag_br
 Johan Tidholm
