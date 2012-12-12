@@ -3,25 +3,41 @@ VERSION = 4.7.2
 CCFLAGS = -g -std=c++11 -pedantic -Wall -Wextra
 LDFLAGS = -L/sw/gcc-4.7.2/lib -static-libstdc++
 
-GSnake: GSnake.o GSnakeEvent.o GSurface.o GSnakeAnimation.o GSnakeObject.o
-	$(CCC) $(CCFLAGS) $(LDFLAGS) -o GSnake GSnake.o GSnakeEvent.o GSurface.o GSnakeAnimation.o GSnakeObject.o -lSDL -lSDL_image
+# Filkataloger där andra delar av programet finns.
+SOURCE = ./src
 
-GSnake.o: Define.h GSnake.h GSnake.cc
-	$(CCC) $(CCFLAGS) -c GSnake.cc
+CPPFLAGS += -I$(SOURCE)
 
-GSnakeEvent.o: GSnakeEvent.h GSnakeEvent.cc
-	$(CCC) $(CCFLAGS) -c GSnakeEvent.cc
+GSnake: Menu.o Graphics.o CEvent.o Sound.o GSnake.o GSnakeEvent.o GSnakeObject.o Runner.o Snake.o
+	$(CCC) $(CPPFLAGS) $(CCFLAGS) $(LDFLAGS) -o GSnake Menu.o Graphics.o CEvent.o Sound.o GSnake.o GSnakeEvent.o Runner.o GSnakeObject.o Snake.o -lSDL -lSDL_image -lSDL_mixer -lSDL_ttf
 
-GSurface.o: GSurface.h GSurface.cc
-	$(CCC) $(CCFLAGS) -c GSurface.cc
+GSnake.o: $(SOURCE)/Define.h $(SOURCE)/GSnake.h $(SOURCE)/GSnake.cc
+	$(CCC) $(CCFLAGS) $(CPPFLAGS) -c $(SOURCE)/GSnake.cc
 
-GSnakeAnimation.o: GSnakeAnimation.h GSnakeAnimation.cc
-	$(CCC) $(CCFLAGS) -c GSnakeAnimation.cc
+GSnakeEvent.o: $(SOURCE)/GSnakeEvent.h $(SOURCE)/GSnakeEvent.cc
+	$(CCC) $(CCFLAGS) $(CPPFLAGS) -c $(SOURCE)/GSnakeEvent.cc
 
-GSnakeObject.o: Define.h GSnakeObject.h GSnakeObject.cc
-	$(CCC) $(CCFLAGS) -c GSnakeObject.cc
+GSnakeObject.o: $(SOURCE)/Define.h $(SOURCE)/GSnakeObject.h $(SOURCE)/GSnakeObject.cc
+	$(CCC) $(CCFLAGS) $(CPPFLAGS) -c $(SOURCE)/GSnakeObject.cc
+
+CEvent.o: $(SOURCE)/CEvent.h $(SOURCE)/CEvent.cc
+	$(CCC) $(CCFLAGS) $(CPPFLAGS) -c $(SOURCE)/CEvent.cc
+
+Graphics.o: $(SOURCE)/Graphics.h $(SOURCE)/Graphics.cc
+	$(CCC) $(CCFLAGS) $(CPPFLAGS) -c $(SOURCE)/Graphics.cc
+
+Sound.o: $(SOURCE)/Sound.h $(SOURCE)/Sound.cc
+	$(CCC) $(CCFLAGS) $(CPPFLAGS) -c $(SOURCE)/Sound.cc
+ 
+Menu.o: $(SOURCE)/Menu.h $(SOURCE)/Menu.cc
+	$(CCC) $(CCFLAGS) $(CPPFLAGS) -c $(SOURCE)/Menu.cc
+
+Runner.o: $(SOURCE)/Runner.cc
+	$(CCC) $(CCFLAGS) $(CPPFLAGS) -c $(SOURCE)/Runner.cc
+
+Snake.o: $(SOURCE)/Snake.h $(SOURCE)/Snake.cc
+	$(CCC) $(CCFLAGS) $(CPPFLAGS) -c $(SOURCE)/Snake.cc
 
 # Städa arbetsmappen
-
 clean:
 	@ \rm -f *.o
