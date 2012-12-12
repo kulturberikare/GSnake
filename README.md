@@ -16,4 +16,4 @@ Building and running the game
 Build the executable by navigating to the game catalogue in the terminal and utilizing the 'make'-command. The game is then started by running the generated executable.
 
 
-**strong emphasis** GSnake is a project by Nima Behnam, Pernilla Petersson, Klara Renström and Johan Tidholm
+**GSnake is a project by Nima Behnam, Pernilla Petersson, Klara Renström and Johan Tidholm**
