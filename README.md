@@ -1,7 +1,7 @@
 GSnake
 ======
 
-The Game
+The game
 -------------
 GSnake is a game based on the popular Snake. The goal is to make the snake as long as possible without crashing it into the walls or itself. The goal is achieved by 'eating' objects placed on the map.
 
