@@ -1,8 +1,12 @@
 /*
- * Snake.h
+ * FILNAMN:       Snake.h
+ * LABORATION:    Projekt - Snake
+ * PROGRAMMERARE: Nima Behnam 910103-0873 MED3
+ * DATUM:         2012-11-29
  *
- *  Created on: 29 nov 2012
- *      Author: Nima
+ * BESKRIVNING 
+ * Funktionsdeklarationer och klassdeklaration för ormen.
+ * 
  */
 
 #ifndef SNAKE_H_

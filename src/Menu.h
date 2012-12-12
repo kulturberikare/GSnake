@@ -5,7 +5,7 @@
  *                Pernilla Petersson 9103241288 MED3
  *                Johan Tidholm 9112175675
  *    
- * DATUM:         2012-12
+ * DATUM:         2012-11-25
  *
  * BESKRIVNING: 
  * Här definieras Menu klassen som har hand om menyn. Den inkluderar Graphics.h för grafikhantering och 

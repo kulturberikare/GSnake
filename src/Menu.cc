@@ -5,7 +5,7 @@
  *                Pernilla Petersson 9103241288 MED3
  *                Johan Tidholm 9112175675
  *    
- * DATUM:         2012-12
+ * DATUM:         2012-11-25
  *
  * BESKRIVNING: 
  * I denna klass definieras de funktioner som initeras i Menu.h. Klassen sköter uppritandet av huvudmenyn, ljudet till den och 

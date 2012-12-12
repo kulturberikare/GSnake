@@ -1,8 +1,14 @@
 /*
- * GSnake.h
+ * FILNAMN:       CSnake.h
+ * LABORATION:    Projekt - Snake
+ * PROGRAMMERARE: Nima Behnam 910103-0873 MED3
+ *                Pernilla Petersson 910324-1288 MED3
+ *                Klara Renström 910914-3306 MED3
+ *                Johan Tidholm 911217-5675 MED3
+ * DATUM:         2012-11-26
  *
- *  Created on: 26 nov 2012
- *      Author: nimbe760
+ * BESKRIVNING 
+ * Detta är själva spelklassen, alla funktioner som spelet kräver för att fungera finns deklarerade här. 
  */
 
 #ifndef GSNAKE_H_
@@ -15,9 +21,7 @@
 #include <sstream>
 #include <vector>
 #include "Define.h"
-//#include "GSnakeEvent.h"
 #include "GSnakeObject.h"
-//#include "GSurface.h"
 #include "Snake.h"
 #include "Sound.h"
 #include "Graphics.h"

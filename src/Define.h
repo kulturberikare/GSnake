@@ -1,8 +1,12 @@
 /*
- * Define.h
+ * FILNAMN:       Define.h
+ * LABORATION:    Projekt - Snake
+ * PROGRAMMERARE: Nima Behnam 910103-0873 MED3
+ * DATUM:         2012-11-26
  *
- *  Created on: 26 nov 2012
- *      Author: nimbe760
+ * BESKRIVNING 
+ * Hårdkodade variabler
+ *
  */
 
 #ifndef DEFINE_H_

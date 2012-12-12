@@ -1,9 +1,16 @@
 /*
- * GSnake.cc
+ * FILNAMN:       CSnake.cc
+ * LABORATION:    Projekt - Snake
+ * PROGRAMMERARE: Nima Behnam 910103-0873 MED3
+ *                Pernilla Petersson 910324-1288 MED3
+ *                Klara Renström 910914-3306 MED3
+ *                Johan Tidholm 911217-5675 MED3
+ * DATUM:         2012-11-26
  *
- *  Created on: 26 nov 2012
- *      Author: nimbe760
+ * BESKRIVNING 
+ * Funktionerna deklarerade i GSnake.h definieras här.
  */
+
 #include "GSnake.h"
 
 GSnake::GSnake() {

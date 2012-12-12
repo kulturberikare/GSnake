@@ -1,8 +1,10 @@
 /*
  * FILNAMN:       Graphics.h
  * LABORATION:    Projekt - Snake
- * PROGRAMMERARE: Pernilla Petersson 910324-1288 MED3
+ * PROGRAMMERARE: Nima Behnam 910103-0873 MED3
+ *                Pernilla Petersson 910324-1288 MED3
  *                Klara Renström 910914-3306 MED3
+ *                Johan Tidholm 911217-5675 MED3
  * DATUM:         2012-11-20
  *
  * BESKRIVNING: 
