@@ -25,7 +25,7 @@
 #include "Snake.h"
 #include "Sound.h"
 #include "Graphics.h"
-#include "CEvent.h"
+#include "GSnakeEvent.h"
 
 enum Difficulties {
 	EASY = 1,
@@ -33,7 +33,7 @@ enum Difficulties {
 	HARD = 4
 };
 
-class GSnake : public CEvent {
+class GSnake : public GSnakeEvent {
 	public:
 		GSnake();
 		bool OnInit();

@@ -18,12 +18,12 @@
 #define _MENU_H_
 
 #include <SDL/SDL_ttf.h>
-#include "CEvent.h"
+#include "GSnakeEvent.h"
 #include "Graphics.h"
 #include "Sound.h"
 #include "GSnake.h"
 
-class Menu : public CEvent
+class Menu : public GSnakeEvent
 {
  private:
   bool Running;

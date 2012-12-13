@@ -1,5 +1,5 @@
 /*
- * FILNAMN:       CEvent.h
+ * FILNAMN:       GSnakeEvent.h
  * LABORATION:    Projekt - Snake
  * PROGRAMMERARE: Nima Behnam 910103-0873 MED3
  *                Pernilla Petersson 910324-1288 MED3
@@ -20,10 +20,10 @@
  
 #include <SDL/SDL.h>
  
-class CEvent {
+class GSnakeEvent {
     public:
-        CEvent();
-        virtual ~CEvent();
+        GSnakeEvent();
+        virtual ~GSnakeEvent();
 
         virtual void OnEvent(SDL_Event*);
         virtual void OnKeyDown(SDLKey, SDLMod, Uint16);

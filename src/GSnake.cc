@@ -13,6 +13,7 @@
 
 #include "GSnake.h"
 
+// Konstruktor
 GSnake::GSnake() {
 	Surf_Display = nullptr;
 	Surf_Background = nullptr;
@@ -48,6 +49,7 @@ int GSnake::Volume;
 int GSnake::SavedVolume;
 int GSnake::Diff;
 
+// Initierar variabler samt objekt
 bool GSnake::OnInit() {
 	if(SDL_INIT_EVERYTHING < 0) {
 		return false;
@@ -178,6 +180,7 @@ bool GSnake::OnInit() {
 	return true;
 }
 
+// Startar själva spelet
 int GSnake::OnExecute() {
 	if(OnInit() == false) {
 		return -1;
@@ -193,7 +196,7 @@ int GSnake::OnExecute() {
 		OnLoop();
 		OnRender();
 
-		//Sätter bolym till aktuellt värde och spelar musik
+		//Sätter volym till aktuellt värde och spelar musik
 		Mix_Volume(-1, GSnake::Volume);
 		Sound::SoundControl.Play(GameMusic);
 	}
@@ -202,6 +205,7 @@ int GSnake::OnExecute() {
 	return 0;
 }
 
+// Ser till så att allt städas upp
 void GSnake::OnCleanup() {
 	GSnakeObject::Snake.back()->OnCleanup();
 
@@ -237,16 +241,19 @@ void GSnake::OnCleanup() {
 	SDL_Quit();
 }
 
+// Ser till så att avslutning sker på korrekt sätt
 void GSnake::OnExit() {
   play = false;
   menu = true;
 	Running = false;
 }
 
+// Eventhanterare
 void GSnake::OnEvent(SDL_Event* Event) {
-	CEvent::OnEvent(Event);
+	GSnakeEvent::OnEvent(Event);
 }
 
+// Eventhanterare för tangenttryckningar
 void GSnake::OnKeyDown(SDLKey sym, SDLMod, Uint16) {
 	if(GSnakeObject::Snake[0]->Direction == GSnakeObject::Snake[1]->Direction)
 
@@ -370,6 +377,7 @@ void GSnake::OnKeyDown(SDLKey sym, SDLMod, Uint16) {
 		}
 }
 
+// Spelloop
 void GSnake::OnLoop() {
 	SDL_WM_SetCaption("GSnake", "GSnake");
 
@@ -478,6 +486,7 @@ void GSnake::OnLoop() {
 
 }
 
+// Ritar objekt på kartan
 void GSnake::OnRender() {
 	Graphics::OnDraw(Surf_Display, Surf_Background, 0, 0);
 	for(unsigned int i = 0; i < GSnakeObject::Snake.size(); i++) {
@@ -507,6 +516,7 @@ void GSnake::OnRender() {
 	SDL_Flip(Surf_Display);
 }
 
+// Konverterare (int->string)
 std::string GSnake::convertInt(int num) {
   std::stringstream ss;
   ss << num;

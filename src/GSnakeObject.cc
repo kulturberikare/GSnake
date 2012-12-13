@@ -6,9 +6,11 @@
  */
 #include "GSnakeObject.h"
 
+// Initiering av behållare för olika objekt
 std::vector<GSnakeObject*> GSnakeObject::ObjectList;
 std::deque<GSnakeObject*> GSnakeObject::Snake;
 
+// Objektkonstruktor
 GSnakeObject::GSnakeObject() {
 	Surf_Object = NULL;
 
@@ -25,6 +27,7 @@ GSnakeObject::GSnakeObject() {
 	Points = 0;
 }
 
+// Laddar in en fil till ett objekt
 bool GSnakeObject::OnLoad(const char* File, int Width, int Height) {
 	if((Surf_Object = Graphics::OnLoad(File)) == NULL) {
 		return false;
@@ -36,6 +39,7 @@ bool GSnakeObject::OnLoad(const char* File, int Width, int Height) {
 	return true;
 }
 
+// Ritar ett objekt
 void GSnakeObject::OnRender(SDL_Surface* Surf_Display) {
 	if(Surf_Object == NULL || Surf_Display == NULL) {
 		return;
@@ -44,6 +48,7 @@ void GSnakeObject::OnRender(SDL_Surface* Surf_Display) {
 	Graphics::OnDraw(Surf_Display, Surf_Object, X, Y);
 }
 
+// Städar upp ett objekt
 void GSnakeObject::OnCleanup() {
 	if(Surf_Object) {
 		SDL_FreeSurface(Surf_Object);
@@ -51,6 +56,7 @@ void GSnakeObject::OnCleanup() {
 	Surf_Object = NULL;
 }
 
+// Kopierar ett objekt, dock avsedd för ormdelar så villkor finns. Inte riktigt en kopieringskonstruktor.
 GSnakeObject* GSnakeObject::clone() {
 	GSnakeObject* Obj = new GSnakeObject;
 
@@ -97,17 +103,20 @@ GSnakeObject* GSnakeObject::clone() {
 	return Obj;
 }
 
+// Rörelsefunktion
 void GSnakeObject::OnMove(float MoveX, float MoveY) {
 	X += MoveX;
 	Y += MoveY;
 }
 
+// Stannar rörelse
 void GSnakeObject::StopMove() {
 	SpeedX = 0;
 	SpeedY = 0;
 	Direction = NONE;
 }
 
+// Objektloop
 void GSnakeObject::OnLoop() {
 	if(Direction == LEFT) {
 		SpeedX = -OBJSIDE;
@@ -129,6 +138,7 @@ void GSnakeObject::OnLoop() {
 	OnMove(SpeedX, SpeedY);
 }
 
+// Collision detector
 bool GSnakeObject::CollisionCheck(int ObjectX, int ObjectY, int ObjectW, int ObjectH) {
     int left1, left2;
     int right1, right2;

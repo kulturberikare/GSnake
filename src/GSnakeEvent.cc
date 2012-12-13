@@ -1,5 +1,5 @@
 /*
- * FILNAMN:       CEvent.cc
+ * FILNAMN:       GSnakeEvent.cc
  * LABORATION:    Projekt - Snake
  * PROGRAMMERARE: Nima Behnam 910103-0873 MED3
  *                Pernilla Petersson 910324-1288 MED3
@@ -8,19 +8,19 @@
  * DATUM:         2012-12-06
  *
  * BESKRIVNING 
- * I denna klass definieras funktionerna initierade i CEvent.h. 
+ * I denna klass definieras funktionerna initierade i GSnakeEvent.h.
  * Det är funktioner som tar han om event som inträffar t.ex. när tangentbordet används.
  */
 
 
-#include "CEvent.h"
+#include "GSnakeEvent.h"
  
-CEvent::CEvent() {}
+GSnakeEvent::GSnakeEvent() {}
  
-CEvent::~CEvent() {}
+GSnakeEvent::~GSnakeEvent() {}
  
 //Kontrollerar vilket event som uppstått.
-void CEvent::OnEvent(SDL_Event* Event) 
+void GSnakeEvent::OnEvent(SDL_Event* Event)
 {
   switch(Event->type) 
     {
@@ -50,8 +50,8 @@ void CEvent::OnEvent(SDL_Event* Event)
     }
 }
 
-void CEvent::OnKeyDown(SDLKey, SDLMod, Uint16) {}
+void GSnakeEvent::OnKeyDown(SDLKey, SDLMod, Uint16) {}
 
-void CEvent::OnExit() {}
+void GSnakeEvent::OnExit() {}
 
-void CEvent::OnUser(Uint8, int, void*, void*) {}
+void GSnakeEvent::OnUser(Uint8, int, void*, void*) {}

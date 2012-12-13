@@ -156,7 +156,7 @@ bool Menu::OnInit()
 //Tar hand om event som inträffar
 void Menu::OnEvent(SDL_Event* Event)
 {
-  CEvent::OnEvent(Event);
+  GSnakeEvent::OnEvent(Event);
 }
 
 //Avslutar menyn
