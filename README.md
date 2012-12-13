@@ -13,6 +13,7 @@ English
 System requirements
 -------------------------
 *a C++ compiler (preferably g++ version 4.7.0 or later)
+
 *SDL Graphics Library
 
 Building and running the game
